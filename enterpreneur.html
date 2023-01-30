@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>E-Interviewer</title>
+        <link rel="icon" type="image/x-icon" href="in.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap" rel="stylesheet">
+
+<style>
+    body{
+    background-image: url("bg.png");
+}
+
+#lgnDv{
+    margin-top: 150px;
+    border-radius: 70px;
+    border-style: ridge;
+    border-color: grey;
+    width: 300px;
+    height: 360px;
+}
+
+#prflMg{
+    text-align: center;
+    height: 75px;
+    margin-top: 10px;
+    border-radius: 70px;
+}
+
+h3{
+    font-family: 'Andada Pro', serif;
+}
+
+#kgd{
+    display: none;
+}
+</style>
+
+<script>
+    function login()
+{
+    var srNm = document.getElementById("nmMlNpt").value;
+    var pssWrd = document.getElementById("pssWrdNpt").value;
+    var SrNm = localStorage.getItem("srNm");
+    var PssWrd = localStorage.getItem("pssWrd");
+console.log(srNm);
+console.log(SrNm);
+console.log(pssWrd);
+console.log(PssWrd);
+    if(srNm == SrNm && pssWrd == PssWrd){
+        window.location = "mn.html";
+    }
+    else{
+        document.getElementById("kgd").style.display = "inline-block"
+    }
+    
+}
+</script>
+</head>
+
+    <body class="container">
+        <center>
+                <h4 id="kgd">Wrong Password</h4>
+                <div id="lgnDv">
+                    <form>
+                        <img src="profile.png" id="prflMg">
+                        <h3 id="mnHd">Login</h3>
+                        <input type="text" id="nmMlNpt" placeholder="E-mail/ Username" required>
+                        <br><br>
+                        <input type="text" id="pssWrdNpt" placeholder="Password" required>
+                        <br><br><br>
+                        <button onclick="login();" id="btnLgn" class="btn btn-primary">Login</button>
+                        <br><br>
+                        <label id=sgnPLbl>Don't have an account? <a href="signp.html">Sign Up now</a></label>
+                    </form>
+                   
+                </div>
+            </center>
+    </body>
+</html>
